@@ -1,18 +1,35 @@
-function convertCurrency() {
-    const amount = parseFloat(document.getElementById('amount').value);
-    const currency = document.getElementById('currency').value;
-    const targetCurrency = document.getElementById('targetCurrency').value;
-    const exchangeRates = {
-        'BRL': 1,
-        'USD': 0.20,
-        'EUR': 0.18,
-        'GBP': 0.16
-    };
-    if (isNaN(amount)) {
-        document.getElementById('result').innerText = 'Por favor, insira um valor válido.';
-        return;
-    }
-    const amountInBRL = amount / exchangeRates[currency];
-    const result = amountInBRL * exchangeRates[targetCurrency];
-    document.getElementById('result').innerText = `Resultado: ${result.toFixed(2)} ${targetCurrency}`;
+function converte() {
+  const valor = Number(document.getElementById("valor").value);
+  const moedaSelecionada = document.querySelector('input[name="moeda"]:checked');
+  const resultado = document.getElementById("resultado");
+
+  if (!Number.isFinite(valor) || valor <= 0) {
+    resultado.textContent = "Digite um valor positivo.";
+    return;
+  }
+
+  if (!moedaSelecionada) {
+    resultado.textContent = "Escolha uma moeda.";
+    return;
+  }
+
+  const cotacoes = {
+    dolar: 5.25,
+    euro: 5.50,
+    real: 1,
+    libras: 6.20
+  };
+
+  const nomes = {
+    dolar: "Dólar",
+    euro: "Euro",
+    real: "Real",
+    libras: "Libras"
+  };
+
+  const convertido = valor / cotacoes[moedaSelecionada.value];
+
+  resultado.textContent =
+    `O valor convertido em ${nomes[moedaSelecionada.value]} é: ${convertido.toFixed(2)}`;
 }
+document.getElementById("converter").addEventListener("click", converte);

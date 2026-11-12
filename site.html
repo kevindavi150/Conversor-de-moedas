@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Dom</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h2>Conversor de Moedas</h2>
+        <div>
+            <p>Aqui vamos Digitar um valor que você deseja converter:</p>
+            <input type="number" id="valor" min="0" step="0.01" placeholder="Digite o valor">
+            <p>Escolha qual moeda deseja converter:</p>
+            <input type="radio" name="moeda" id="dolar" value="dolar">
+            <label for="dolar">Dólar</label>
+            <input type="radio" name="moeda" id="euro" value="euro">
+            <label for="euro">Euro</label>
+            <input type="radio" name="moeda" id="real" value="real">
+            <label for="real">Real</label>
+            <input type="radio" name="moeda" id="libras" value="libras">
+            <label for="libras">Libras</label>
+            <section id="resultado"></section>
+        </div>
+        <br>
+        <button id="converter">Converter</button>
+    </header>
+</body>
+</html>

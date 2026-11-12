@@ -1,26 +1,98 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f2f2f2;
-    text-align: center;
-    max-width: 400px;
-    margin: 50px auto;
-}
-input, select, button{
-    padding: 10px;
-    margin: 10px 0;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-button{
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at top left, #263d75, transparent 38%),
+    #0b1020;
+  color: #f4f7ff;
+  font-family: system-ui, sans-serif;
+}
+
+header {
+  width: min(100%, 460px);
+  padding: 36px;
+  border: 1px solid #ffffff20;
+  border-radius: 20px;
+  background: #151e30;
+  box-shadow: 0 20px 60px #0006;
+}
+
+h2 {
+  margin: 0 0 28px;
+  font-size: 2rem;
+  letter-spacing: -0.05em;
+}
+
+p {
+  margin: 22px 0 12px;
+  color: #aab6ce;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ffffff30;
+  border-radius: 10px;
+  outline: none;
+  background: #0b1220;
+  color: #fff;
+  font: inherit;
+}
+
+input[type="number"]:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px #3b82f640;
+}
+
+input[type="radio"] {
+  accent-color: #60a5fa;
+}
+
+label {
+  margin-right: 12px;
+  color: #d4dced;
+  cursor: pointer;
+}
+
+#resultado {
+  min-height: 24px;
+  margin-top: 20px;
+  color: #7dd3fc;
+  font-weight: 700;
+}
+
+button {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #60a5fa, #818cf8);
+  color: #0b1020;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms, filter 180ms;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 26px 22px;
+  }
+}
